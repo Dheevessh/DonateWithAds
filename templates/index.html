@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <title>AdForCharity</title> 
+        <link rel="stylesheet" href= 'styles.css'>
+         
+         </head> 
+         <body> 
+            <header> 
+                <h1>🌟 AdForCharity 🌟</h1>
+                 <p class="subheader">Support causes while you browse. We donate 50% of all ad revenue to the top-voted charity!</p>
+                 </header>
+    <section class="ads-grid">
+        <div class="ad-block">[Ad 1]</div>
+        <div class="ad-block">[Ad 2]</div>
+        <div class="ad-block">[Ad 3]</div>
+        <div class="ad-block">[Ad 4]</div>
+    </section>
+    
+    <section class="poll">
+        <h2>🏆 Vote for This Month's Charity</h2>
+        <form method="post">
+            <div class="vote-options">
+                {% for charity, count in votes %}
+                    <label class="vote-card">
+                        <input type="radio" name="charity" value="{{ charity }}" required>
+                        <div class="charity-name">{{ charity }}</div>
+                        <div class="vote-count">{{ count }} votes</div>
+                    </label>
+                {% endfor %}
+            </div>
+            <button class="vote-btn" type="submit">✅ Submit Vote</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>🧡 Every view makes a difference. Thanks for being part of something good.</p>
+    </footer>
+
+</body>
+</html>
